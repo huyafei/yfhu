@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "vensst",
+      "script": "npm",
+      "args": "start"
+    }
+  ]
+}
