@@ -35,7 +35,7 @@ export default {
     host: '0.0.0.0' // default: localhost,
   },
   // 模式 spa 没有服务器端渲染（只有客户端路由导航等） universal 服务器端呈现+客户端路由导航等
-  mode: 'universal',
+  // mode: 'universal',
   // 路由配置
   router: {
     middleware: ['i18n'] // 路由中间件
