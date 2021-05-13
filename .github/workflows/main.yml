@@ -25,7 +25,7 @@ jobs:
       uses: actions/setup-node@master
     - run: npm install
     - run: npm run build
-    - run: tar -zcvf release.tgz .nuxt static nuxt.config.js package.json package-lock.json pm2.config.json
+    - run: tar -zcvf release.tgz .nuxt static nuxt.config.js package.json pm2.config.json
 
     # 发布 Release
     - name: Create Release
@@ -64,5 +64,7 @@ jobs:
           cd /home/www/web/yfhu
           wget https://github.com/huyafei/yfhu/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
+          rm -rf release.tgz
           npm install --production
+          npm run start
           pm2 reload pm2.config.json
