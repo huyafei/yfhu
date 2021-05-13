@@ -17,7 +17,7 @@
         class="v-info"
       >
         <div class="v-info__base">
-          <img src="/static/images/blog/01.jpeg" alt="">
+          <img src="/images/blog/01.jpeg" alt="头像">
           <ul>
             <li>
               <label>{{ $t('index.about.name') }}:</label>

@@ -27,7 +27,7 @@
               <img
                 slot="cover"
                 alt="example"
-                src="/static/images/blog/01.jpeg"
+                src="/images/blog/01.jpeg"
               >
               www.yfhu.vensst.com
             </a-card>
