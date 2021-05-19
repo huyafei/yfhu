@@ -3,6 +3,9 @@
     <VTitle :title="$t('index.navbar.contact')" />
     <a-row class="v-floor__content">
       <a-col
+        class=" wow bounceInLeft"
+        data-wow-duration="2s"
+        data-wow-delay="0.5s"
         :xs="24"
         :sm="12"
         :md="{
@@ -25,6 +28,9 @@
         </ul>
       </a-col>
       <a-col
+        class=" wow bounceInRight"
+        data-wow-duration="2s"
+        data-wow-delay="0.5s"
         :xs="24"
         :sm="12"
         :md="{

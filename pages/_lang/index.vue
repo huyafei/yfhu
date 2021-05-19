@@ -11,6 +11,10 @@
 </template>
 
 <script>
+if (process.browser) { // 在这里根据环境引入wow.js
+  // eslint-disable-next-line no-unused-vars
+  const { WOW } = require('wowjs')
+}
 export default {
   name: 'Index',
   data () {
@@ -23,11 +27,14 @@ export default {
       title: this.title
     }
   },
-  computed: {
+  computed: {},
 
+  mounted () {
+    if (process.browser) {
+      // eslint-disable-next-line no-undef
+      new WOW().init()
+    }
   },
-
-  mounted () {},
   methods: {
     onChange (a, b, c) {
       console.log(a, b, c)
@@ -40,8 +47,8 @@ export default {
 </script>
 
 <style scoped lang="less">
-  .v-main{
-    /*height: calc(~"100% - 24px");*/
-    /*.flex-c(center,center);*/
-  }
+.v-main {
+  /*height: calc(~"100% - 24px");*/
+  /*.flex-c(center,center);*/
+}
 </style>
