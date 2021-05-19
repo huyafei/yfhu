@@ -3,6 +3,9 @@
     <VTitle :title="$t('index.navbar.about')" />
     <a-row class="v-floor__content" type="flex">
       <a-col
+        class="v-info wow bounceInLeft"
+        data-wow-duration="2s"
+        data-wow-delay="0.5s"
         :sm="{
           span:24
         }"
@@ -14,7 +17,6 @@
           span:8,
           offset:4,
         }"
-        class="v-info"
       >
         <div class="v-info__base">
           <img src="/images/blog/01.jpeg" alt="头像">
@@ -39,7 +41,9 @@
         </div>
         <div class="v-info__introduction">
           <h3>{{ $t("index.about.introduction") }}</h3>
-          <p>君子知夫不全不粹之不足以为美也，故诵数以贯之，思索以通之，为其人以处之，除其害者以持养之。使目非是无欲见也，使耳非是无欲闻也，使口非是无欲言也，使心非是无欲虑也。及至其致好之也，目好之五色，耳好之五声，口好之五味，心利之有天下。是故权利不能倾也，群众不能移也，天下不能荡也。生乎由是，死乎由是，夫是之谓德操。德操然后能定，能定然后能应。能定能应，夫是之谓成人。天见其明，地见其光，君子贵其全也。</p>
+          <p>
+            君子知夫不全不粹之不足以为美也，故诵数以贯之，思索以通之，为其人以处之，除其害者以持养之。使目非是无欲见也，使耳非是无欲闻也，使口非是无欲言也，使心非是无欲虑也。及至其致好之也，目好之五色，耳好之五声，口好之五味，心利之有天下。是故权利不能倾也，群众不能移也，天下不能荡也。生乎由是，死乎由是，夫是之谓德操。德操然后能定，能定然后能应。能定能应，夫是之谓成人。天见其明，地见其光，君子贵其全也。
+          </p>
         </div>
         <div class="v-info__tag">
           {{ $t("index.about.tag") }}：
@@ -49,6 +53,9 @@
         </div>
       </a-col>
       <a-col
+        class="v-info wow bounceInRight"
+        data-wow-duration="2s"
+        data-wow-delay="0.5s"
         :sm="{
           span:24
         }"
@@ -60,13 +67,12 @@
           span:8,
           offset:0
         }"
-        class="v-info"
       >
         <div class="v-info__skill">
           <h3>{{ $t("index.about.skill") }}</h3>
           <ul>
             <li v-for="(item,index) in skill" :key="index">
-              <label>{{ index+1+"、" }}</label>
+              <label>{{ index + 1 + "、" }}</label>
               <div>{{ item.content }}</div>
             </li>
           </ul>
@@ -90,9 +96,7 @@ export default {
   mixins: [],
   props: {},
   asyncData (context) {
-    return {
-
-    }
+    return {}
   },
   data () {
     return {
@@ -123,78 +127,96 @@ export default {
 }
 </script>
 <style scoped lang="less">
-  .v-floor{
-    background-color: #f9f9f9;
-  }
-  .v-info{
-    background-color: @cl-white;
-    padding: 20px;
-    h3{
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    &__base{
-      display: flex;
-      img{
-        width: 150px;
-        height: 150px;
-        margin-right: 20px;
-      }
-      ul{
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        li{
-          font-size: 18px;
-          label{
-            font-weight: 700;
-          }
-          span{
-            font-size: 16px;
-            word-break: break-all;
-          }
-        }
-      }
-    }
-    &__introduction{
-      margin-top: 20px;
-      p{
-        text-indent: 2em;
-        font-size: 16px;
-      }
-    }
-    &__tag{
-      margin-top: 10px;
-    }
-    &__skill,&__education{
-      h3{
+.v-floor {
+  background-color: #f9f9f9;
+}
 
-      }
-      ul{
-        padding-left: 20px;
-        font-size: 16px;
-        li{
-          margin-bottom: 4px;
-        }
-        li:last-child{
-          margin-bottom: 0;
-        }
-      }
+.v-info {
+  background-color: @cl-white;
+  padding: 20px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__base {
+    display: flex;
+
+    img {
+      width: 150px;
+      height: 150px;
+      margin-right: 20px;
     }
-    &__skill{
-      ul{
-        li{
-          display: flex;
-          div{
-            flex: 1;
-          }
+
+    ul {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      li {
+        font-size: 18px;
+
+        label {
+          font-weight: 700;
+        }
+
+        span {
+          font-size: 16px;
+          word-break: break-all;
         }
       }
-    }
-    &__education{
-      margin-top: 10px;
     }
   }
+
+  &__introduction {
+    margin-top: 20px;
+
+    p {
+      text-indent: 2em;
+      font-size: 16px;
+    }
+  }
+
+  &__tag {
+    margin-top: 10px;
+  }
+
+  &__skill, &__education {
+    h3 {
+
+    }
+
+    ul {
+      padding-left: 20px;
+      font-size: 16px;
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__skill {
+    ul {
+      li {
+        display: flex;
+
+        div {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  &__education {
+    margin-top: 10px;
+  }
+}
 </style>

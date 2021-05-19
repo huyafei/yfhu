@@ -5,28 +5,44 @@
       <a-col :xs="24" :md="{span:16,offset:4}">
         <a-timeline mode="alternate">
           <a-timeline-item>
-            <ul>
+            <ul
+              class=" wow bounceInRight"
+              data-wow-duration="2s"
+              data-wow-delay="0.5s"
+            >
               <li><b>2020.02 - 至今</b></li>
               <li>****有限公司</li>
               <li>设计开发工程是师</li>
             </ul>
           </a-timeline-item>
           <a-timeline-item color="gray">
-            <ul>
+            <ul
+              class=" wow bounceInLeft"
+              data-wow-duration="2s"
+              data-wow-delay="0.5s"
+            >
               <li><b>2018.03 - 2020.02</b></li>
               <li>****有限公司</li>
               <li>前端开发工程师</li>
             </ul>
           </a-timeline-item>
           <a-timeline-item color="gray">
-            <ul>
+            <ul
+              class=" wow bounceInRight"
+              data-wow-duration="2s"
+              data-wow-delay="0.5s"
+            >
               <li><b>2017.08 - 2018.03</b></li>
               <li>****有限公司</li>
               <li>前端开发工程师</li>
             </ul>
           </a-timeline-item>
           <a-timeline-item color="gray">
-            <ul>
+            <ul
+              class=" wow bounceInLeft"
+              data-wow-duration="2s"
+              data-wow-delay="0.5s"
+            >
               <li><b>2016.06 - 2017.06</b></li>
               <li>****有限公司</li>
               <li>web开发工程师</li>
