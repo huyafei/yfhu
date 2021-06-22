@@ -42,7 +42,7 @@
           <a-form-item>
             <a-input
               v-decorator="[
-                'name',
+                'userName',
                 {
                   rules: [{ required: true, message: $t('index.form.nameMessage'), whitespace: true }],
                 },
@@ -76,7 +76,7 @@
           <a-form-item>
             <a-input
               v-decorator="[
-                'phoneNumber',
+                'phone',
                 {
                   rules: [{ required: true, message: $t('index.form.phoneNumberMessage') }],
                 },
@@ -145,10 +145,12 @@ export default {
   },
   methods: {
     handleSubmit (e) {
+      const _that = this
       e.preventDefault()
       this.form.validateFieldsAndScroll((err, values) => {
         if (!err) {
           console.log('Received values of form: ', values)
+          _that.$emit('submit-event', values)
         }
       })
     }

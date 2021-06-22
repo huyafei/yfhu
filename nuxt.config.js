@@ -46,6 +46,7 @@ export default {
     '@/plugins/component',
     '@/plugins/i18n.js',
     '@/plugins/cookies.js',
+    '@/plugins/axios.js',
     { src: '@/plugins/js-toolkit-fn.js', ssr: false }
   ],
   generate: {
@@ -65,10 +66,24 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios', '@nuxtjs/style-resources'
   ],
-
+  env: {
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
+  axios: {
+    BaseURL: 'http://yfhu.vensst.com',
+    // browserBaseURL: 'http://172.16.8.191:1224',
+    proxy: true
+  },
+  // 代理
+  proxy: {
+    '/api/': {
+      target: 'http://172.16.8.191:1224'
+      // target: process.env.NODE_ENV === 'development' ? 'http://172.16.8.191:1224' : 'http://yfhu.vensst.com'
+      // pathRewrite: {
+      //   '^/api/': ''
+      // }
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
