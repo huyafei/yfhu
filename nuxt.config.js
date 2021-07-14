@@ -7,7 +7,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, ,user-scalable=no,shrink-to-fit=no,minimum-scale=1, maximum-scale=1' },
       { hid: 'description', name: 'description', content: '胡亚飞的个人主页' }
     ],
     link: [

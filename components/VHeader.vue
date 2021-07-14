@@ -172,6 +172,7 @@ export default {
         }
       }
       /deep/ .v-a-dropdown{
+        transition: all .2s;
         .ant-btn{
           .font(20px,@cl-white)
         }
