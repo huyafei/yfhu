@@ -8,7 +8,7 @@ export default ({ app, params, store }) => {
   if (locale) {
     store.commit('SET_LANG', locale)
   }
-  console.log(store.state.locale)
+  // console.log(store.state.locale)
   app.i18n = new VueI18n({
     locale: store.state.locale,
     fallbackLocale: 'zh-CN',

@@ -88,11 +88,8 @@
             网站管理
           </li>
           <li>
-<!--            <NuxtLink :to="$i18n.path('login')">-->
-<!--              管理员入口-->
-<!--            </NuxtLink>  -->
-            <NuxtLink to="/">
-              管理员入口
+            <NuxtLink :to="$i18n.path('my')">
+              站长入口
             </NuxtLink>
           </li>
         </ul>

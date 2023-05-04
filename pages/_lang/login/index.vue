@@ -58,26 +58,26 @@
             </a-input>
           </a-form-item>
           <a-form-item>
-            <a-checkbox
-              v-decorator="[
-                'remember',
-                {
-                  valuePropName: 'checked',
-                  initialValue: true,
-                },
-              ]"
-            >
-              {{ $t('login.form.rememberPassword') }}
-            </a-checkbox>
-            <a class="login-form-forgot" href="">
-              {{ $t('login.form.forgotPassword') }}
-            </a>
+            <!--            <a-checkbox-->
+            <!--              v-decorator="[-->
+            <!--                'remember',-->
+            <!--                {-->
+            <!--                  valuePropName: 'checked',-->
+            <!--                  initialValue: true,-->
+            <!--                },-->
+            <!--              ]"-->
+            <!--            >-->
+            <!--              {{ $t('login.form.rememberPassword') }}-->
+            <!--            </a-checkbox>-->
+            <!--            <a class="login-form-forgot" href="">-->
+            <!--              {{ $t('login.form.forgotPassword') }}-->
+            <!--            </a>-->
             <a-button size="large" type="primary" html-type="submit" class="login-form-button">
               {{ $t('login.form.login') }}
             </a-button>
-            <NuxtLink :to="$i18n.path('register')">
-              {{ $t('login.form.registerNow') }}
-            </NuxtLink>
+            <!--            <NuxtLink :to="$i18n.path('register')">-->
+            <!--              {{ $t('login.form.registerNow') }}-->
+            <!--            </NuxtLink>-->
           </a-form-item>
         </a-form>
       </a-col>
@@ -88,7 +88,7 @@
 export default {
   components: {},
   mixins: [],
-  layout: 'login',
+  layout: 'full-screen',
   props: {},
   data () {
     return {}
@@ -114,6 +114,8 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log('Received values of form: ', values)
+          this.$cookies.set('token', '123')
+          this.$router.replace(this.$route.query.redirect)
         }
       })
     }
@@ -122,7 +124,8 @@ export default {
 </script>
 <style scoped lang="less">
   .v-main{
-    height: calc(~"100% - 24px");
+    //height: calc(~"100% - 0px");
+    height: 100%;
     .flex-c(center,center);
     .v-login-form{
       width: 100%;

@@ -43,16 +43,18 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/antd-ui',
-    '@/plugins/component',
+    // '@/plugins/component.js',
     '@/plugins/i18n.js',
     '@/plugins/cookies.js',
     '@/plugins/axios.js',
-    { src: '@/plugins/js-toolkit-fn.js', ssr: false }
+    { src: '@/plugins/router.js', ssr: false }, // 这个如果在服务器渲染，页面会跳动如果token判断 的话
+    { src: '@/plugins/js-toolkit-fn.js', ssr: false },
+    { src: '@/plugins/wow.js', ssr: false }
   ],
   generate: {
     // routes: ['/', '/about', '/zh-CN', '/zh-CN/about']
   },
-  // Auto import components: https://go.nuxtjs.dev/config-components
+  // 自动导入 components 文件中组件: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -77,7 +79,7 @@ export default {
   // 代理
   proxy: {
     '/api/': {
-      target: 'http://172.16.8.191:1224'
+      target: 'http://172.16.8.121:1224'
       // target: process.env.NODE_ENV === 'development' ? 'http://172.16.8.191:1224' : 'http://yfhu.vensst.com'
       // pathRewrite: {
       //   '^/api/': ''

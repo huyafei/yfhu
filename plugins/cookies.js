@@ -1,13 +1,10 @@
 import Vue from 'vue'
+// https://www.npmjs.com/package/js-cookie
 import Cookies from 'js-cookie'
 const PREFIX = 'YFHU'
 const cookies = {
-  set (name, value, expires, path) {
-    if (expires) {
-      const t = new Date().getTime()
-      expires = new Date(t + expires)
-    }
-    Cookies.set(PREFIX + '_' + name, value, { expires, path })
+  set (name, value, options) {
+    Cookies.set(PREFIX + '_' + name, value, options)
   },
   get (name) {
     return Cookies.get(PREFIX + '_' + name)
@@ -15,8 +12,9 @@ const cookies = {
   getJson (name) {
     return Cookies.getJSON(PREFIX + '_' + name)
   },
-  remove (name, path) {
-    Cookies.remove(PREFIX + '_' + name, { path })
+  remove (name, options) {
+    Cookies.remove(PREFIX + '_' + name, options)
   }
 }
 Vue.prototype.$cookies = cookies
+export default cookies

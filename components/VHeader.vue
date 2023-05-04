@@ -8,7 +8,7 @@
         class="v-header__logo"
       >
         <NuxtLink to="">
-          VenSst
+          HUYAFEI
         </NuxtLink>
       </a-col>
       <a-col
