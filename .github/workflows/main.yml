@@ -5,10 +5,10 @@ name: CI
 on:
   # 在推或拉请求事件上触发工作流，但仅用于主分支
   push:
-    #tags:
-     # - 'v*'
-    branches: # 此处不仅限于监听分支, 还可监听 tag
-      - master
+    tags:
+      - 'v*'
+#    branches: # 此处不仅限于监听分支, 还可监听 tag
+#      - master
     paths-ignore: # 下列文件的变更不触发部署，可以自行添加
       - README.md
 
@@ -22,9 +22,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
+    # 安装 node
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        # 选择要使用的 node 版本
+        node-version: '14'
+        
     # 打包构建
     - name: Build
-      uses: actions/setup-node@master
     - run: npm install
     - run: npm run build
     - run: tar -zcvf release.tgz .nuxt static nuxt.config.js package.json pm2.config.json
